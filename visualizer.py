@@ -721,7 +721,10 @@ with demo_tab:
 
         usr_app_likeability = st.slider(
             "Apreciación de la app (0: No me gusta, 10: Me encanta)",
-            min_value=0, max_value=10, value=5, step=1
+            min_value=0,
+            max_value=10,
+            value=5,
+            step=1,
         )
 
     with col2:
@@ -741,4 +744,6 @@ with demo_tab:
 
         plt.savefig("julia_gen_item.png", dpi=300, bbox_inches="tight", pad_inches=1)
 
-        st.image("julia_gen_item.png", caption="Generated Julia Set Fractal: " + usr_app_name)
+        st.image(
+            "julia_gen_item.png", caption="Generated Julia Set Fractal: " + usr_app_name
+        )
