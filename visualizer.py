@@ -4,6 +4,8 @@ import numpy as np
 
 st.set_page_config(layout="wide")
 
+st.title("Sistema de diseño Fractal")
+
 intro_tab, mandelbrot_tab, julia_tab, system_tab, demo_tab = st.tabs(
     [
         "Introducción",
