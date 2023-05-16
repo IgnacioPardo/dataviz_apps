@@ -586,11 +586,11 @@ with system_tab:
 
     """
 
-        #### Frecuencia de uso
+    #### Frecuencia de uso
 
-        La frecuencia de uso de la app afecta la cantidad de iteraciones del fractal
+    La frecuencia de uso de la app afecta la cantidad de iteraciones del fractal
 
-        """
+    """
 
     st.image("julia_use_frecuency.png")
 
@@ -611,11 +611,11 @@ with system_tab:
 
     """
 
-        #### Tamaño y Apreciación de la app
+    #### Tamaño y Apreciación de la app
 
-        El tamaño y el Apreciación de la app afectan el tamaño de la imagen, que se puede interpretar como la resolución del fractal en si.
+    El tamaño y el Apreciación de la app afectan el tamaño de la imagen, que se puede interpretar como la resolución del fractal en si.
 
-        """
+    """
 
     st.image("julia_size.png")
 
@@ -651,24 +651,7 @@ with system_tab:
 
     """
         Finalmente, el sistema de diseño parametrizado desarrollado se puede expandir para infinitos valores para generar cualquier fractal del Julia Set para representar cualquier tipo de app.
-"""
-
-    # Plot different complex numbers with the julia set
-
-    # 50 plots
-
-#     fig, axs = plt.subplots(5, 10, figsize=(100, 100))
-
-#     for i, x in enumerate(np.linspace(-2, 2, 10)):
-#         for j, y in enumerate(np.linspace(-2, 2, 5)):
-#             axs[j, i].imshow(julia_set_fractal(complex(x, y)))
-#             axs[j, i].axis("off")
-
-#     fig.tight_layout()
-
-#     fig.savefig("julia_set_examples.png", dpi=50, bbox_inches="tight")
-
-#     st.image("julia_set_examples.png")
+    """
 
 
 with demo_tab:
