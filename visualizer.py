@@ -716,6 +716,9 @@ with demo_tab:
         usr_app_size += 2
         usr_app_use_frecuency += 2
 
+        if usr_app_likeability > 10:
+            usr_app_likeability = 10        
+
     with col2:
 
         img = gen_julia_item(
