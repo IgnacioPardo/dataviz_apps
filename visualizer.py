@@ -2,7 +2,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
 
-st.set_page_config(layout="wide")
+st.set_page_config(page_title="Sistema de diseño Fractal", page_icon="🎨", layout="wide")
 
 st.title("Sistema de diseño Fractal")
 
