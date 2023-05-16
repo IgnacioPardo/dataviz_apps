@@ -241,10 +241,10 @@ with mandelbrot_tab:
 
         return mandelbrot(size * size, size * size, use_frecuency)
 
-    #plt.imshow(mandelbrot(400, 400))
-    #plt.axis("off")
+    plt.imshow(mandelbrot(400, 400))
+    plt.axis("off")
 
-    #plt.savefig("mandelbrot.png", dpi=300, bbox_inches="tight")
+    plt.savefig("mandelbrot.png", dpi=300, bbox_inches="tight")
 
     col2.image("mandelbrot.png", caption="Mandelbrot Set")
 
@@ -252,15 +252,15 @@ with mandelbrot_tab:
         Entonces podemos generar distintas imágenes a partir de distintos valores de $c$, y combinar otros factores, como el color de la imagen o la resolución del fractal para aprovechar en nuestro sistema de diseño.
 """
 
-    #fig, ax = plt.subplots(1, 5, figsize=(20, 20))
-#
-    #for i, size in enumerate([10, 50, 100, 200, 500]):
-    #    ax[i].imshow(mandelbrot(size, size, 500), cmap="hot")
-    #    ax[i].set_title(f"{size}")
-    #    ax[i].axis("off")
-#
-    #fig.savefig("mandelbrot_sizes.png", dpi=300, bbox_inches="tight", pad_inches=3)
-    #fig.tight_layout()
+    fig, ax = plt.subplots(1, 5, figsize=(20, 20))
+
+    for i, size in enumerate([10, 50, 100, 200, 500]):
+        ax[i].imshow(mandelbrot(size, size, 500), cmap="hot")
+        ax[i].set_title(f"{size}")
+        ax[i].axis("off")
+
+    fig.savefig("mandelbrot_sizes.png", dpi=300, bbox_inches="tight", pad_inches=3)
+    fig.tight_layout()
 
     st.image("mandelbrot_sizes.png")
 
@@ -268,18 +268,18 @@ with mandelbrot_tab:
         A partir de esto plantee un sistema de diseño parametrizado que nos permita generar distintas imágenes a partir de distintos valores de $c$.
         """
 
-    #for app in apps:
-    #    apps[app]["cmap"] = cmaps_dict[apps[app]["likeability"]]
-#
-    ## Generate every app image
-#
-    #for app in apps:
-    #    apps[app]["mandelbrot"] = gen_mandelbrot_item(
-    #        apps[app]["size"],
-    #        apps[app]["use_frecuency"],
-    #        apps[app]["likeability"],
-    #        apps[app]["type"],
-    #    )
+    for app in apps:
+        apps[app]["cmap"] = cmaps_dict[apps[app]["likeability"]]
+
+    # Generate every app image
+
+    for app in apps:
+        apps[app]["mandelbrot"] = gen_mandelbrot_item(
+            apps[app]["size"],
+            apps[app]["use_frecuency"],
+            apps[app]["likeability"],
+            apps[app]["type"],
+        )
 
     # Plot every app image
 
@@ -288,22 +288,22 @@ with mandelbrot_tab:
 
     # 25 images in total
 
-    #fig, axs = plt.subplots(4, 7, figsize=(20, 20))
-#
-    #for i, app in enumerate(apps):
-    #    axs[i // 7, i % 7].imshow(apps[app]["mandelbrot"], cmap=apps[app]["cmap"])
-    #    axs[i // 7, i % 7].axis("off")
-    #    axs[i // 7, i % 7].set_title(app)
-#
-    #axs[3, 4].axis("off")
-    #axs[3, 4].set_title("")
-    #axs[3, 5].axis("off")
-    #axs[3, 5].set_title("")
-    #axs[3, 6].axis("off")
-    #axs[3, 6].set_title("")
-    #fig.tight_layout()
-#
-    #fig.savefig("mandelbrot_design.png", dpi=300)
+    fig, axs = plt.subplots(4, 7, figsize=(20, 20))
+
+    for i, app in enumerate(apps):
+        axs[i // 7, i % 7].imshow(apps[app]["mandelbrot"], cmap=apps[app]["cmap"])
+        axs[i // 7, i % 7].axis("off")
+        axs[i // 7, i % 7].set_title(app)
+
+    axs[3, 4].axis("off")
+    axs[3, 4].set_title("")
+    axs[3, 5].axis("off")
+    axs[3, 5].set_title("")
+    axs[3, 6].axis("off")
+    axs[3, 6].set_title("")
+    fig.tight_layout()
+
+    fig.savefig("mandelbrot_design.png", dpi=300)
 
     st.image("mandelbrot_design.png")
 
@@ -319,17 +319,17 @@ with mandelbrot_tab:
 
     # Size affects the number of iterations
 
-    #fig, ax = plt.subplots(1, 9, figsize=(20, 20))
-    #for s in range(2, 11):
-    #    ax[s - 2].imshow(gen_mandelbrot_item(s, 10, 10, "Reference"), cmap="Greys")
-    #    ax[s - 2].axis("off")
-    #    ax[s - 2].set_title(f"Size {s}")
-#
-    #fig.tight_layout()
-#
-    #fig.savefig(
-    #    "mandelbrot_reference_size.png", dpi=300, bbox_inches="tight", pad_inches=2
-    #)
+    fig, ax = plt.subplots(1, 9, figsize=(20, 20))
+    for s in range(2, 11):
+        ax[s - 2].imshow(gen_mandelbrot_item(s, 10, 10, "Reference"), cmap="Greys")
+        ax[s - 2].axis("off")
+        ax[s - 2].set_title(f"Size {s}")
+
+    fig.tight_layout()
+
+    fig.savefig(
+        "mandelbrot_reference_size.png", dpi=300, bbox_inches="tight", pad_inches=2
+    )
 
     st.image("mandelbrot_reference_size.png")
 
@@ -339,21 +339,21 @@ with mandelbrot_tab:
 
     # Use frecuency affects the number of iterations
 
-    #fig, ax = plt.subplots(1, 10, figsize=(20, 20))
-#
-    #for f in range(1, 11):
-    #    ax[f - 1].imshow(gen_mandelbrot_item(7, f, 10, "Reference"), cmap="Greys")
-    #    ax[f - 1].axis("off")
-    #    ax[f - 1].set_title(f"Use frecuency {f}")
-#
-    #fig.tight_layout()
-#
-    #fig.savefig(
-    #    "mandelbrot_reference_use_frecuency.png",
-    #    dpi=300,
-    #    bbox_inches="tight",
-    #    pad_inches=2,
-    #)
+    fig, ax = plt.subplots(1, 10, figsize=(20, 20))
+
+    for f in range(1, 11):
+        ax[f - 1].imshow(gen_mandelbrot_item(7, f, 10, "Reference"), cmap="Greys")
+        ax[f - 1].axis("off")
+        ax[f - 1].set_title(f"Use frecuency {f}")
+
+    fig.tight_layout()
+
+    fig.savefig(
+        "mandelbrot_reference_use_frecuency.png",
+        dpi=300,
+        bbox_inches="tight",
+        pad_inches=2,
+    )
 
     st.image("mandelbrot_reference_use_frecuency.png")
 
@@ -363,21 +363,21 @@ with mandelbrot_tab:
 
     # Likeability affects the color map
 
-    #fig, ax = plt.subplots(1, 11, figsize=(20, 20))
-#
-    #for l in range(0, 11):
-    #    ax[l].imshow(gen_mandelbrot_item(7, 10, l, "Reference"), cmap=cmaps_dict[l])
-    #    ax[l].axis("off")
-    #    ax[l].set_title(f"Likeability {l}")
-#
-    #fig.tight_layout()
-#
-    #fig.savefig(
-    #    "mandelbrot_reference_likeability.png",
-    #    dpi=300,
-    #    bbox_inches="tight",
-    #    pad_inches=2,
-    #)
+    fig, ax = plt.subplots(1, 11, figsize=(20, 20))
+
+    for l in range(0, 11):
+        ax[l].imshow(gen_mandelbrot_item(7, 10, l, "Reference"), cmap=cmaps_dict[l])
+        ax[l].axis("off")
+        ax[l].set_title(f"Likeability {l}")
+
+    fig.tight_layout()
+
+    fig.savefig(
+        "mandelbrot_reference_likeability.png",
+        dpi=300,
+        bbox_inches="tight",
+        pad_inches=2,
+    )
 
     st.image("mandelbrot_reference_likeability.png")
 
@@ -453,11 +453,11 @@ with julia_tab:
 
     # plot an example
 
-   #fig, ax = plt.subplots()
-   #ax.imshow(julia_set_fractal(complex(-0.1, 0.65)))
-   #ax.axis("off")
-   ## ax.set_title("Julia Set Example")
-   #fig.savefig("julia_set.png", dpi=300, bbox_inches="tight")
+    fig, ax = plt.subplots()
+    ax.imshow(julia_set_fractal(complex(-0.1, 0.65)))
+    ax.axis("off")
+    # ax.set_title("Julia Set Example")
+    fig.savefig("julia_set.png", dpi=300, bbox_inches="tight")
 
     # Columns
 
@@ -495,13 +495,13 @@ with julia_tab:
     De esta forma llegamos a un sistema de diseño parametrizado que nos permite generar distintos fractales en función de distintos tipos de apps.
     """
 
-    #for app in apps:
-    #    apps[app]["julia"] = gen_julia_item(
-    #        apps[app]["size"],
-    #        apps[app]["use_frecuency"],
-    #        apps[app]["likeability"],
-    #        apps[app]["type"],
-    #    )
+    for app in apps:
+        apps[app]["julia"] = gen_julia_item(
+            apps[app]["size"],
+            apps[app]["use_frecuency"],
+            apps[app]["likeability"],
+            apps[app]["type"],
+        )
 
     # Plot every app image
 
@@ -510,22 +510,22 @@ with julia_tab:
 
     # 25 images in total
 
-    #fig, axs = plt.subplots(4, 7, figsize=(20, 20))
-#
-    #for i, app in enumerate(apps):
-    #    axs[i // 7, i % 7].imshow(apps[app]["julia"], cmap=apps[app]["cmap"])
-    #    axs[i // 7, i % 7].axis("off")
-    #    axs[i // 7, i % 7].set_title(app)
-#
-    #axs[3, 4].axis("off")
-    #axs[3, 4].set_title("")
-    #axs[3, 5].axis("off")
-    #axs[3, 5].set_title("")
-    #axs[3, 6].axis("off")
-    #axs[3, 6].set_title("")
-    #fig.tight_layout()
-#
-    #fig.savefig("julia_design.png", dpi=300, bbox_inches="tight", pad_inches=1)
+    fig, axs = plt.subplots(4, 7, figsize=(20, 20))
+
+    for i, app in enumerate(apps):
+        axs[i // 7, i % 7].imshow(apps[app]["julia"], cmap=apps[app]["cmap"])
+        axs[i // 7, i % 7].axis("off")
+        axs[i // 7, i % 7].set_title(app)
+
+    axs[3, 4].axis("off")
+    axs[3, 4].set_title("")
+    axs[3, 5].axis("off")
+    axs[3, 5].set_title("")
+    axs[3, 6].axis("off")
+    axs[3, 6].set_title("")
+    fig.tight_layout()
+
+    fig.savefig("julia_design.png", dpi=300, bbox_inches="tight", pad_inches=1)
 
     st.write("### Resultado: Sistema de diseño basado en fractales")
     st.image("julia_design.png")
@@ -544,16 +544,16 @@ with julia_tab:
         "Sports and Health": complex(0.73, -0.73),
     }
 
-    #fig, ax = plt.subplots(1, 7, figsize=(20, 20))
-#
-    #for i, t in enumerate(complex_types):
-    #    ax[i].imshow(julia_set_fractal(complex_types[t]), cmap="gray")
-    #    ax[i].axis("off")
-    #    ax[i].set_title(t)
-#
-    #fig.tight_layout()
-#
-    #fig.savefig("julia_types.png", dpi=300, bbox_inches="tight", pad_inches=1)
+    fig, ax = plt.subplots(1, 7, figsize=(20, 20))
+
+    for i, t in enumerate(complex_types):
+        ax[i].imshow(julia_set_fractal(complex_types[t]), cmap="gray")
+        ax[i].axis("off")
+        ax[i].set_title(t)
+
+    fig.tight_layout()
+
+    fig.savefig("julia_types.png", dpi=300, bbox_inches="tight", pad_inches=1)
 
 with system_tab:
     """
@@ -570,19 +570,19 @@ with system_tab:
 
     # The use frecuency of the app affects the max iterations of the fractal
 
-    #fig, ax = plt.subplots(1, 11, figsize=(20, 20))
-#
-    #for i, s in enumerate(range(0, 11)):
-    #    ax[i].imshow(
-    #        julia_set_fractal(complex_types["Social"], n=100, thresh=(s + 1)),
-    #        cmap="gray",
-    #    )
-    #    ax[i].axis("off")
-    #    ax[i].set_title(s)
-#
-    #fig.tight_layout()
-#
-    #fig.savefig("julia_use_frecuency.png", dpi=300, bbox_inches="tight", pad_inches=1)
+    fig, ax = plt.subplots(1, 11, figsize=(20, 20))
+
+    for i, s in enumerate(range(0, 11)):
+        ax[i].imshow(
+            julia_set_fractal(complex_types["Social"], n=100, thresh=(s + 1)),
+            cmap="gray",
+        )
+        ax[i].axis("off")
+        ax[i].set_title(s)
+
+    fig.tight_layout()
+
+    fig.savefig("julia_use_frecuency.png", dpi=300, bbox_inches="tight", pad_inches=1)
 
     """
 
@@ -596,18 +596,18 @@ with system_tab:
 
     # The size and the likeablility of the app affect the size of the image
 
-    #fig, ax = plt.subplots(1, 11, figsize=(20, 20))
-#
-    #for i, s in enumerate(range(0, 11)):
-    #    ax[i].imshow(
-    #        julia_set_fractal(complex_types["Social"], n=(s + 2) ** 2), cmap="gray"
-    #    )
-    #    ax[i].axis("off")
-    #    ax[i].set_title(s)
-#
-    #fig.tight_layout()
-#
-    #fig.savefig("julia_size.png", dpi=300, bbox_inches="tight", pad_inches=1)
+    fig, ax = plt.subplots(1, 11, figsize=(20, 20))
+
+    for i, s in enumerate(range(0, 11)):
+        ax[i].imshow(
+            julia_set_fractal(complex_types["Social"], n=(s + 2) ** 2), cmap="gray"
+        )
+        ax[i].axis("off")
+        ax[i].set_title(s)
+
+    fig.tight_layout()
+
+    fig.savefig("julia_size.png", dpi=300, bbox_inches="tight", pad_inches=1)
 
     """
 
@@ -621,19 +621,19 @@ with system_tab:
 
     # The likeability of the app affects the color map
 
-    #fig, ax = plt.subplots(1, 11, figsize=(20, 20))
-#
-    #for i, s in enumerate(range(0, 11)):
-    #    ax[i].imshow(
-    #        julia_set_fractal(complex_types["Social"], n=100, thresh=100),
-    #        cmap=cmaps_dict[s],
-    #    )
-    #    ax[i].axis("off")
-    #    ax[i].set_title(s)
-#
-    #fig.tight_layout()
-#
-    #fig.savefig("julia_likeability.png", dpi=300, bbox_inches="tight", pad_inches=1)
+    fig, ax = plt.subplots(1, 11, figsize=(20, 20))
+
+    for i, s in enumerate(range(0, 11)):
+        ax[i].imshow(
+            julia_set_fractal(complex_types["Social"], n=100, thresh=100),
+            cmap=cmaps_dict[s],
+        )
+        ax[i].axis("off")
+        ax[i].set_title(s)
+
+    fig.tight_layout()
+
+    fig.savefig("julia_likeability.png", dpi=300, bbox_inches="tight", pad_inches=1)
 
     # close all the figures
 
