@@ -712,6 +712,10 @@ with demo_tab:
             step=1,
         )
 
+        usr_app_likeability += 2
+        usr_app_size += 2
+        usr_app_use_frecuency += 2
+
     with col2:
 
         img = gen_julia_item(
