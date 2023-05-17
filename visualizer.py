@@ -4,7 +4,7 @@ import numpy as np
 
 st.set_page_config(page_title="Sistema de diseño Fractal", page_icon="🎨", layout="wide")
 
-st.title("Sistema de diseño Fractal")
+st.title("Sistema de diseño Fractal - Ignacio Pardo")
 
 intro_tab, mandelbrot_tab, julia_tab, system_tab, demo_tab = st.tabs(
     [
@@ -362,7 +362,7 @@ with mandelbrot_tab:
     st.image("mandelbrot_reference_use_frecuency.png")
 
     """
-        ##### El "Apreciación" por la app afecta el color del fractal
+        ##### El "aprecio" por la app afecta el color del fractal
         """
 
     # Likeability affects the color map
@@ -615,9 +615,9 @@ with system_tab:
 
     """
 
-    #### Tamaño y Apreciación de la app
+    #### Tamaño y aprecio de la app
 
-    El tamaño y el Apreciación de la app afectan el tamaño de la imagen, que se puede interpretar como la resolución del fractal en si.
+    El tamaño y el aprecio de la app afectan el tamaño de la imagen, que se puede interpretar como la resolución del fractal en si.
 
     """
 
@@ -645,9 +645,9 @@ with system_tab:
 
     """
 
-        #### Apreciación de la app
+        #### aprecio de la app
 
-        El Apreciación de la app ademas determina el mapa de colores que se usa para generar el fractal.
+        El aprecio de la app ademas determina el mapa de colores que se usa para generar el fractal.
 
         """
 
@@ -704,10 +704,10 @@ with demo_tab:
             "Tamaño de la app", min_value=0, max_value=10, value=5, step=1
         )
 
-        # El usuario ingresa el Apreciación de su app
+        # El usuario ingresa el aprecio de su app
 
         usr_app_likeability = st.slider(
-            "Apreciación de la app (0: No me gusta, 10: Me encanta)",
+            "aprecio de la app (0: No me gusta, 10: Me encanta)",
             min_value=0,
             max_value=10,
             value=5,
