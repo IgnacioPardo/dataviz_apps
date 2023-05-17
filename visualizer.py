@@ -719,7 +719,7 @@ with demo_tab:
         usr_app_use_frecuency += 2
 
         if usr_app_likeability > 10:
-            usr_app_likeability = 10        
+            usr_app_likeability = 10
 
     with col2:
 
