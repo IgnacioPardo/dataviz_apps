@@ -1,4 +1,16 @@
+---
+title: "Sistema de diseño Fractal - Ignacio Pardo"
+author: "Ignacio Pardo"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
 # Sistema de diseño Fractal - Ignacio Pardo
+
+## Links
+
+[Repo de GitHub: https://github.com/IgnacioPardo/dataviz_apps](https://github.com/IgnacioPardo/dataviz_apps)
+[Visualización y Demo Web: https://ignaciopardo-dataviz-apps-visualizer-x6avik.streamlit.app/#demo](https://ignaciopardo-dataviz-apps-visualizer-x6avik.streamlit.app/#demo)
 
 ## Apps y clasificación
 
