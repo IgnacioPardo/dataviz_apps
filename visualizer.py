@@ -695,7 +695,7 @@ with demo_tab:
 
         st.write("Ingrese los datos de su app")
 
-        usr_app_name = st.text_input("Nombre de la app", "Instagram")
+        usr_app_name = st.text_input("Nombre de la app", "Whatsapp")
 
         # El usuario ingresa el tipo de su app
 
