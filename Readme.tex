@@ -1,0 +1,345 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Sistema de diseño Fractal - Ignacio Pardo},
+  pdfauthor={Ignacio Pardo},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Sistema de diseño Fractal - Ignacio Pardo}
+\author{Ignacio Pardo}
+\date{\texttt{r\ Sys.Date()}}
+
+\begin{document}
+\maketitle
+
+\hypertarget{sistema-de-diseuxf1o-fractal---ignacio-pardo}{%
+\section{Sistema de diseño Fractal - Ignacio
+Pardo}\label{sistema-de-diseuxf1o-fractal---ignacio-pardo}}
+
+\hypertarget{links}{%
+\subsection{Links}\label{links}}
+
+\href{https://github.com/IgnacioPardo/dataviz_apps}{Repo de GitHub:
+https://github.com/IgnacioPardo/dataviz\_apps}
+\href{https://ignaciopardo-dataviz-apps-visualizer-x6avik.streamlit.app/\#demo}{Visualización
+y Demo Web:
+https://ignaciopardo-dataviz-apps-visualizer-x6avik.streamlit.app/\#demo}
+
+\hypertarget{apps-y-clasificaciuxf3n}{%
+\subsection{Apps y clasificación}\label{apps-y-clasificaciuxf3n}}
+
+Las aplicaciones que tenés en el celular son una ventana a tu
+personalidad. ¿Qué dicen sobre vos? Estas son 25 aplicaciones que tengo
+instaladas:
+
+\hypertarget{comunication}{%
+\paragraph{Comunication}\label{comunication}}
+
+\begin{itemize}
+\tightlist
+\item
+  Whatsapp
+\item
+  Discord \#\#\#\# Social
+\item
+  Instagram
+\item
+  Twitter
+\item
+  Pinterest \#\#\#\# Entertainment
+\item
+  Disney+
+\item
+  Netflix
+\item
+  Youtube \#\#\#\# Music
+\item
+  Spotify
+\item
+  YouTube Music
+\item
+  GarageBand \#\#\#\# Sports and Health
+\item
+  Adidas
+\item
+  SportClub
+\item
+  Fitness
+\item
+  Salud \#\#\#\# Identity
+\item
+  MercadoPago
+\item
+  Mi Argentina
+\item
+  ACAMovil
+\item
+  Wallet \#\#\#\# Productivity
+\item
+  Arc
+\item
+  Drive
+\item
+  Figma
+\item
+  Github
+\item
+  Visual Studio Code
+\item
+  Campus Di Tella
+\end{itemize}
+
+\hypertarget{desarrollo-de-un-pimer-sistema-de-diseuxf1o-a-mano}{%
+\subsection{Desarrollo de un pimer sistema de diseño a
+mano}\label{desarrollo-de-un-pimer-sistema-de-diseuxf1o-a-mano}}
+
+\hypertarget{referencia}{%
+\subsubsection{Referencia}\label{referencia}}
+
+\hypertarget{resultado}{%
+\subsubsection{Resultado}\label{resultado}}
+
+\hypertarget{un-sistema-de-diseuxf1o-parametrizado-general}{%
+\subsection{Un sistema de diseño parametrizado
+general}\label{un-sistema-de-diseuxf1o-parametrizado-general}}
+
+\hypertarget{idea-fractales}{%
+\subsubsection{Idea: Fractales}\label{idea-fractales}}
+
+\hypertarget{mandelbrot-set}{%
+\paragraph{Mandelbrot Set}\label{mandelbrot-set}}
+
+La idea de tener un sistema de diseño parametrizado es que podamos
+generar distintas imágenes a partir de distintos valores.
+
+Para ello una primera idea fue el Mandelbroth Set, un fractal que se
+genera a partir de la siguiente fórmula:
+
+\[
+z_{n+1} = z_n^2 + c
+\]
+
+donde \(z_0 = 0\) y \(c\) es un número complejo.
+
+\begin{figure}
+\centering
+\includegraphics{https://user-images.githubusercontent.com/65306107/238806904-a6db1db9-7a48-43de-9b05-8c8567e39f02.png}
+\caption{Mandelbrot Set}
+\end{figure}
+
+Entonces podemos generar distintas imágenes a partir de distintos
+valores de \(c\), y combinar otros factores, como el color de la imagen
+o la resolución del fractal para aprovechar en nuestro sistema de
+diseño.
+\includegraphics{https://user-images.githubusercontent.com/65306107/238807160-a7888c21-6456-4db7-b140-5fe134eb3345.png}
+
+A partir de esto plantee un sistema de diseño parametrizado que nos
+permita generar distintas imágenes a partir de distintos valores de
+\(C\).
+
+\begin{figure}
+\centering
+\includegraphics{https://user-images.githubusercontent.com/65306107/238807263-fee40c31-2fc7-4fec-87de-842964d419b2.png}
+\caption{mandelbrot\_design}
+\end{figure}
+
+\hypertarget{sistema-de-referencia-para-esta-primera-idea}{%
+\paragraph{Sistema de Referencia para esta primera
+idea}\label{sistema-de-referencia-para-esta-primera-idea}}
+
+\hypertarget{el-tamauxf1o-de-la-app-afecta-el-tamauxf1o-del-fractal}{%
+\subparagraph{El tamaño de la app afecta el tamaño del
+fractal}\label{el-tamauxf1o-de-la-app-afecta-el-tamauxf1o-del-fractal}}
+
+\begin{figure}
+\centering
+\includegraphics{https://user-images.githubusercontent.com/65306107/238807395-ef96d652-d078-4d0f-a187-24639875cda7.png}
+\caption{mandelbrot\_reference\_size}
+\end{figure}
+
+\hypertarget{la-frecuencia-de-uso-de-la-app-afecta-la-cantidad-de-iteraciones-del-fractal}{%
+\subparagraph{La frecuencia de uso de la app afecta la cantidad de
+iteraciones del
+fractal}\label{la-frecuencia-de-uso-de-la-app-afecta-la-cantidad-de-iteraciones-del-fractal}}
+
+\begin{figure}
+\centering
+\includegraphics{https://user-images.githubusercontent.com/65306107/238807719-7ebadf47-45e6-4817-adac-f7a9d5358287.png}
+\caption{mandelbrot\_reference\_use\_frecuency}
+\end{figure}
+
+\hypertarget{el-aprecio-por-la-app-afecta-el-color-del-fractal}{%
+\subparagraph{El ``aprecio'' por la app afecta el color del
+fractal}\label{el-aprecio-por-la-app-afecta-el-color-del-fractal}}
+
+\begin{figure}
+\centering
+\includegraphics{https://user-images.githubusercontent.com/65306107/238807757-0196437a-857d-4077-958d-fbca8e514606.png}
+\caption{mandelbrot\_reference\_likeability}
+\end{figure}
+
+\hypertarget{ampliar-el-sistema-de-diseuxf1o}{%
+\subsubsection{Ampliar el sistema de
+diseño}\label{ampliar-el-sistema-de-diseuxf1o}}
+
+\hypertarget{otros-tipos-de-fractales-julia-set}{%
+\paragraph{Otros tipos de fractales: Julia
+Set}\label{otros-tipos-de-fractales-julia-set}}
+
+El Mandelbrot Set es un ejemplo particular del Julia Set, por lo que
+además podríamos parametrizar el tipo de fractal que queremos generar.
+Un ejemplo de un fractal generado por el Julia Set a partir de
+\[c = -0.1 + 0.65i\] Aprovechando entonces el sistema de diseño que ya
+tenemos, podemos generar distintos fractales en función del tipo de app
+que queremos representar.
+
+Para ello elegí diferentes números complejos y los asocié a distintos
+tipos de apps.\\
+\textbar{} App \textbar{} Número Complejo \textbar{} \textbar{} ---
+\textbar{} --- \textbar{} \textbar{} Comunication \textbar{} 0.285 +
+0.01i \textbar{} \textbar{} Entertainment \textbar{} -0.8 + 0.156i
+\textbar{} \textbar{} Identity \textbar{} -0.4 + 0.6i \textbar{}
+\textbar{} Music \textbar{} -0.1 - 0.732i \textbar{} \textbar{}
+Productivity \textbar{} -0.9 + 0i \textbar{} \textbar{} Social
+\textbar{} -0.215 - 0.65i \textbar{} \textbar{} Sports and Health
+\textbar{} 0.73 - 0.73i \textbar{}
+
+De esta forma llegamos a un sistema de diseño parametrizado que nos
+permite generar distintos fractales en función de distintos tipos de
+apps.
+
+\hypertarget{resultado-sistema-de-diseuxf1o-basado-en-fractales}{%
+\subsubsection{Resultado: Sistema de diseño basado en
+fractales}\label{resultado-sistema-de-diseuxf1o-basado-en-fractales}}
+
+\begin{figure}
+\centering
+\includegraphics{https://user-images.githubusercontent.com/65306107/238807958-dd857f2d-d73d-4f62-8781-63c7cdd02894.png}
+\caption{julia\_design}
+\end{figure}
+
+\hypertarget{sistema-de-diseuxf1o-final}{%
+\subsubsection{Sistema de diseño
+final}\label{sistema-de-diseuxf1o-final}}
+
+\hypertarget{referencias}{%
+\paragraph{Referencias}\label{referencias}}
+
+\hypertarget{clasificaciuxf3n-de-apps}{%
+\paragraph{Clasificación de apps}\label{clasificaciuxf3n-de-apps}}
+
+El tipo de app afecta el número complejo que se usa para generar el
+fractal
+
+\begin{figure}
+\centering
+\includegraphics{https://user-images.githubusercontent.com/65306107/238808054-1049a269-1da3-40a1-82fc-af0ee7b55227.png}
+\caption{julia\_types}
+\end{figure}
+
+\hypertarget{frecuencia-de-uso}{%
+\subparagraph{Frecuencia de uso}\label{frecuencia-de-uso}}
+
+La frecuencia de uso de la app afecta la cantidad de iteraciones del
+fractal
+
+\begin{figure}
+\centering
+\includegraphics{https://user-images.githubusercontent.com/65306107/238808091-e33145e5-34f5-4134-abc3-fa8b16244143.png}
+\caption{julia\_use\_frecuency}
+\end{figure}
+
+\hypertarget{tamauxf1o-y-aprecio-de-la-app}{%
+\subparagraph{Tamaño y aprecio de la
+app}\label{tamauxf1o-y-aprecio-de-la-app}}
+
+El tamaño y el aprecio de la app afectan el tamaño de la imagen, que se
+puede interpretar como la resolución del fractal en si.
+
+\begin{figure}
+\centering
+\includegraphics{https://user-images.githubusercontent.com/65306107/238808140-77ac0225-dc28-4e3e-b90c-c5e9a3b92a46.png}
+\caption{julia\_size}
+\end{figure}
+
+\hypertarget{aprecio-de-la-app}{%
+\subparagraph{Aprecio de la app}\label{aprecio-de-la-app}}
+
+El aprecio de la app ademas determina el mapa de colores que se usa para
+generar el fractal.
+
+\begin{figure}
+\centering
+\includegraphics{https://user-images.githubusercontent.com/65306107/238808158-1ec9fb1b-a688-4d9d-a278-5e4f9aa561f1.png}
+\caption{julia\_likeability}
+\end{figure}
+
+Finalmente, el sistema de diseño parametrizado desarrollado se puede
+expandir para infinitos valores para generar cualquier fractal del Julia
+Set para representar cualquier tipo de app.
+
+Arme una
+\href{https://ignaciopardo-dataviz-apps-visualizer-x6avik.streamlit.app/\#demo}{demo
+aca}
+
+\href{https://datavizapps.ignaciopardo.repl.co/\#demo}{Link alternativo}
+
+\end{document}

@@ -1,5 +1,6 @@
 import streamlit as st
 import matplotlib.pyplot as plt
+import matplotlib as mpl
 import numpy as np
 
 st.set_page_config(page_title="Sistema de diseño Fractal", page_icon="🎨", layout="wide")
@@ -121,19 +122,40 @@ apps = {
 
 # Add cmap value based on likeability
 
-cmaps_dict = {
-    0: "Greys",
-    1: "Greens",
-    2: "YlGn",
-    3: "OrRd",
-    4: "Reds",
-    5: "Oranges",
-    6: "Purples",
-    7: "PuBu",
-    8: "Blues",
-    9: "BuPu",
-    10: "PuRd",
-}
+# cmaps_dict = {
+#     0: "Greys",
+#     1: "Greens",
+#     2: "YlGn",
+#     3: "OrRd",
+#     4: "Reds",
+#     5: "Oranges",
+#     6: "Purples",
+#     7: "PuBu",
+#     8: "Blues",
+#     9: "BuPu",
+#     10: "PuRd",
+# }
+
+# generator function
+
+
+def gen_cmap(cmap_name, n):
+    cmap = mpl.colormaps[cmap_name]
+    for i in range(0, n):
+        partition = cmap(np.linspace(0, (i+1)/n, 256//n))
+        split_cmap = mpl.colors.ListedColormap(partition, name=f'{cmap_name}_{n}')
+        yield split_cmap
+
+# Add cmap value based on likeability
+
+
+n = 18
+cmap_name = 'magma'
+cmap_name = 'gnuplot2'
+cmaps_dict = {i : cmap for i, cmap in enumerate(gen_cmap(cmap_name, n))}
+
+for app in apps:
+    apps[app]['cmap'] = cmaps_dict[apps[app]['likeability'] + 2]
 
 types = set([app["type"] for app in apps.values()])
 
