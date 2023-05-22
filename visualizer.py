@@ -18,7 +18,7 @@ intro_tab, mandelbrot_tab, julia_tab, system_tab, demo_tab = st.tabs(
 )
 
 apps = {
-    "Whatsapp": {
+    "WhatsApp": {
         "size": 10,
         "use_frecuency": 10,
         "likeability": 8,
@@ -695,7 +695,7 @@ with demo_tab:
 
         st.write("Ingrese los datos de su app")
 
-        usr_app_name = st.text_input("Nombre de la app", "Whatsapp")
+        usr_app_name = st.text_input("Nombre de la app", "WhatsApp")
 
         # El usuario ingresa el tipo de su app
 
